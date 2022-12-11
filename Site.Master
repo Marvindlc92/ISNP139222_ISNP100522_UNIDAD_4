@@ -14,7 +14,46 @@
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+  <style>  
+    
+  .dropdown {
+      background-color: gray;
+  display: inline-block;
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+  background-color: gray;
+}
+.dropdown-content a {
+  display: block;
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+}
+.dropdown-content a:hover {
+  color: #FFFFFF;
+  background-color: Black;
+}  
+    
+    
+    
+    
+    
 
+
+
+
+
+</style>
 </head>
 <body>
     <form runat="server">
@@ -37,7 +76,7 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
+        
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -57,10 +96,22 @@
                         <li><a runat="server" href="~/Usuario">Usuario</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
-                    </ul>
-                </div>
+                         <li>
+                        <div class="dropdown">
+  <asp:label ID="lblUser" aling="right" runat="server" Text="Label" Class="btn"></asp:label>
+  <div class="dropdown-content">
+  <a href="logout.aspx">Salir</a>
+  </div>
+</div>                   
+                    </li>
+                         </ul>
+                    </div>
+                
             </div>
         </div>
+
+        
+        
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

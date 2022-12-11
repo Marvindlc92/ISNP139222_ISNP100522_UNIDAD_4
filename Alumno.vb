@@ -97,4 +97,26 @@
         c.strcon.Close()
     End Sub
 
+    Public Sub eliminar()
+        Try
+            c.strcon.Open()
+            With c.cmd
+                .Connection = c.strcon
+                .CommandText = "DELETE FROM alumno WHERE codAlumno = '" & codAlumno & "'"
+                c.result = c.cmd.ExecuteNonQuery
+            End With
+
+            If c.result = 0 Then
+                MsgBox("No se ha podido Borrar", MsgBoxStyle.Critical)
+            Else
+                MsgBox("Registro Borrado exitosamente", MsgBoxStyle.OkOnly)
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        c.strcon.Close()
+    End Sub
+
+
 End Class
