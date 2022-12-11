@@ -3,4 +3,7 @@
     <h2 class="text-center">LISTADO ALUMNOS</h2>
     <asp:PlaceHolder ID="estudiantes" runat="server" />
 
+    <br />
+    <a runat="server" href="~/AgregarAlumno">NUEVO ALUMNO</a>
+
 </asp:Content>

@@ -1,4 +1,4 @@
-﻿
+﻿Imports Microsoft.VisualBasic
 Imports MySql.Data.MySqlClient
 Imports System.Data
 
@@ -13,7 +13,7 @@ Public Class Conexion
         Return New MySqlConnection("server=localhost;user id=ugb;password=ugb2022;database=academica;port=3306")
     End Function
 
-    Public srtcon As MySqlConnection = strconexion()
+    Public strcon As MySqlConnection = strconexion()
 
 
 
