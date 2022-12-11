@@ -2,7 +2,7 @@
 Imports MySql.Data.MySqlClient
 Imports System.Data
 
-Public Class conexion
+Public Class Conexion
 
     Public cmd As New MySqlCommand
     Public da As New MySqlDataAdapter
