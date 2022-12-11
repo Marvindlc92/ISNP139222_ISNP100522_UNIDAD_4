@@ -32,6 +32,17 @@ Public Class Alumno1
                 html.Append("</td><td>")
                 html.Append(dt.Rows(i).Item("apeAlumno"))
                 html.Append("</td>")
+
+
+                html.Append("<td>")
+                html.Append("<a href = 'EditarAlumno.aspx?Alumno=" & codigo & "' dt.Rows(i).Item('codigo') >Editar</a>")
+                html.Append("</td>")
+                html.Append("<td>")
+                html.Append("<a href = 'EliminarAlumno.aspx?Alumno=" & codigo & "' dt.Rows(i).Item('codigo') >Eliminar</a>")
+                html.Append("</td>")
+
+
+
                 html.Append("</tr>")
             Next
 

@@ -64,6 +64,37 @@
         c.strcon.Close()
     End Sub
 
+    Public Function mostrarRegistro() As DataTable
+        c.strcon.Open()
+        With c.cmd
+            .Connection = c.strcon
+            .CommandText = "SELECT codAlumno,nomAlumno,apeAlumno FROM alumno WHERE codAlumno = '" & codAlumno & "'"
+            'c.result = c.cmd.ExecuteNonQuery
+        End With
+        c.da.SelectCommand = c.cmd
+        c.da.Fill(c.dt)
+        Return c.dt
+    End Function
 
+    Public Sub editar()
+        Try
+            c.strcon.Open()
+            With c.cmd
+                .Connection = c.strcon
+                .CommandText = "UPDATE alumno SET nomAlumno ='" & nomAlumno & "', apeAlumno = '" & apeAlumno & "' WHERE codAlumno = '" & codAlumno & "' "
+                c.result = c.cmd.ExecuteNonQuery
+            End With
+
+            If c.result = 0 Then
+                MsgBox("No se ha podido actualizar", MsgBoxStyle.Critical)
+            Else
+                MsgBox("Registro actualizado exitosamente", MsgBoxStyle.OkOnly)
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        c.strcon.Close()
+    End Sub
 
 End Class
