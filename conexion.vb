@@ -16,4 +16,5 @@ Public Class conexion
     Public srtcon As MySqlConnection = strconexion()
 
 
+
 End Class
