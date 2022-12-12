@@ -11,7 +11,7 @@
             <td class="text-left" style="width: 247px">CODIGO</td>
             <td>
                 
-                <asp:TextBox ID="txtCodigo" runat="server" Width="133px"></asp:TextBox>
+                <asp:TextBox ID="txtCodigo" runat="server" Width="133px" ReadOnly="True"></asp:TextBox>
                 
                 <asp:RequiredFieldValidator ID="rfvCodigo" runat="server" ControlToValidate="txtCodigo" ErrorMessage="Codigo Requerido"></asp:RequiredFieldValidator>
             </td>
